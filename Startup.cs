@@ -32,12 +32,17 @@ namespace fruit_api
             services.AddMvc();
 
             //Now register our services with Autofac container
+
             var builder = new ContainerBuilder();
-            // builder.RegisterType<PostRepository>().As<IPostRepository>();
-            // builder.RegisterType<SiteAnalyticsServices>();
+
+            builder.RegisterModule(new RegistrationModule());
+
             builder.Populate(services);
+
             var container = builder.Build();
-            //Create the IServiceProvider based on the container.
+
+            // Create the IServiceProvider based on the container.
+
             return new AutofacServiceProvider(container);
         }
 
