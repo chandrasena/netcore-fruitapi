@@ -25,6 +25,7 @@ namespace fruit_api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // added context
             services.AddDbContext<FruitContext>(opt => opt.UseInMemoryDatabase("hello"));
             services.AddMvc();
         }
