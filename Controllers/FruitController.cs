@@ -10,23 +10,26 @@ namespace fruit_api.Controllers
     [Route("api/[controller]")]
     public class FruitController : Controller
     {
-        private readonly FruitContext _context;
+        private readonly IFruitService _fruitService;
 
-        public FruitController(FruitContext context)
+        // private readonly FruitContext _context;
+
+        public FruitController(IFruitService fruitService)
         {
-            _context = context;
+            _fruitService = fruitService;
+            // _context = context;
 
-            if (_context.FruitItems.Count() == 0)
-            {
-                _context.FruitItems.Add(new FruitItem { Name = "Item1" });
-                _context.SaveChanges();
-            }
+            // if (_context.FruitItems.Count() == 0)
+            // {
+            //     _context.FruitItems.Add(new FruitItem { Name = "Item1" });
+            //     _context.SaveChanges();
+            // }
         }
         // GET api/values
         [HttpGet]
         public IEnumerable<FruitItem> GetAll()
         {
-            return _context.FruitItems.ToList();
+            return _fruitService.GetFruits(); //_context.FruitItems.ToList();
         }
         // public IEnumerable<string> Get()
         // {

@@ -6,7 +6,7 @@ namespace fruit_api
     {
         protected override void Load(ContainerBuilder builder)
         {
-            //builder.RegisterType<PostRepository>().As<IPostRepository>();
+            builder.RegisterType<FruitService>().As<IFruitService>();
         }
     }
 }
