@@ -6,9 +6,12 @@ namespace fruit_api
 {
     public class FruitService : IFruitService {
         private readonly FruitContext _context;
-        public FruitService(FruitContext context)
+        private readonly IRepository<FruitItem> _repository;
+
+        public FruitService(FruitContext context, IRepository<FruitItem> repository)
         {
             _context = context;
+            _repository = repository;
 
             if (_context.FruitItems.Count() == 0)
             {
@@ -19,7 +22,7 @@ namespace fruit_api
 
         public IEnumerable<FruitItem> GetFruits()
         {
-            return _context.FruitItems.ToList();    
+            return _repository.GetAll(); //_context.FruitItems.ToList();    
         }
     }   
 }

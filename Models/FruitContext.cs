@@ -10,6 +10,10 @@ namespace fruit_api.Models
         }
 
         public DbSet<FruitItem> FruitItems { get; set; }
-
+ 
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+        }
     }
 }

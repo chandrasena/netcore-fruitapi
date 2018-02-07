@@ -32,7 +32,7 @@ namespace fruit_api
             services.AddMvc();
 
             //Now register our services with Autofac container
-
+            //services.AddScoped<IRepository<IEntity>, Repository<IEntity>>();
             var builder = new ContainerBuilder();
 
             builder.RegisterModule(new RegistrationModule());

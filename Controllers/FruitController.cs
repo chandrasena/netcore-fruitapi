@@ -29,7 +29,9 @@ namespace fruit_api.Controllers
         [HttpGet]
         public IEnumerable<FruitItem> GetAll()
         {
-            return _fruitService.GetFruits(); //_context.FruitItems.ToList();
+            var result = _fruitService.GetFruits(); //_context.FruitItems.ToList();
+            Console.WriteLine(result);
+            return result;
         }
         // public IEnumerable<string> Get()
         // {

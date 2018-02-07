@@ -1,4 +1,5 @@
 using Autofac;
+using fruit_api.Models;
 
 namespace fruit_api
 {
@@ -6,7 +7,8 @@ namespace fruit_api
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<FruitService>().As<IFruitService>();
+            builder.RegisterGeneric(typeof(Repository<>)).As(typeof(IRepository<>)).InstancePerLifetimeScope();
+            builder.RegisterType<FruitService>().As<IFruitService>().InstancePerLifetimeScope();
         }
     }
 }
