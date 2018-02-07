@@ -25,11 +25,11 @@ namespace fruit_api
             // set to public auto properties 
             FruitRepository = fruitRepository;
             _dbContext = dbContext;
-            ShouldDispose = false;
+            //ShouldDispose = false;
 
             SetupContextForRepositories();
 
-            ValidationErrors = new List<string>();
+            //ValidationErrors = new List<string>();
         }
 
 
@@ -69,8 +69,8 @@ namespace fruit_api
 
         #region IUnitOfWork Members
 
-        public bool ShouldDispose { get; set; }
-        public string InitialisedMethod { get; set; }
+        // public bool ShouldDispose { get; set; }
+        // public string InitialisedMethod { get; set; }
 
         public IRepository<FruitItem> FruitRepository { get; set; }
         public void Dispose()
