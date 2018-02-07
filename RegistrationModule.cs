@@ -7,7 +7,9 @@ namespace fruit_api
     {
         protected override void Load(ContainerBuilder builder)
         {
+            //builder.RegisterType<FruitContext>(opt => opt.UseInMemoryDatabase("hello")).AsSelf().InstancePerLifetimeScope();
             builder.RegisterGeneric(typeof(Repository<>)).As(typeof(IRepository<>)).InstancePerLifetimeScope();
+            builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerLifetimeScope();
             builder.RegisterType<FruitService>().As<IFruitService>().InstancePerLifetimeScope();
         }
     }

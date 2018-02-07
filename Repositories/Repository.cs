@@ -5,10 +5,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace fruit_api
 {
-    public class Repository<TEntity> : IRepository<TEntity>
-    where TEntity : class,IEntity
-{
-    private readonly FruitContext _dbContext;
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class,IEntity
+    {
+        public FruitContext Context { get; set; }
+        public IUnitOfWork UnitOfWork { get; set; }
 
         public Task Create(TEntity entity)
         {
@@ -20,14 +20,14 @@ namespace fruit_api
             throw new System.NotImplementedException();
         }
 
-        public Repository(FruitContext dbContext)
-    {
-        _dbContext = dbContext;
-    }
+        // public Repository(FruitContext dbContext)
+        // {
+        //     _dbContext = dbContext;
+        // }
 
         public IQueryable<TEntity> GetAll()
         {
-            return _dbContext.Set<TEntity>().AsNoTracking();
+            return Context.Set<TEntity>().AsNoTracking();
         }
 
         public Task<TEntity> GetById(int id)

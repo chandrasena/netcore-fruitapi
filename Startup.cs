@@ -27,12 +27,11 @@ namespace fruit_api
         // This method gets called by the runtime. Use this method to add services to the container.
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            // added context
+            // added context. this context is scoped. (once per request)
             services.AddDbContext<FruitContext>(opt => opt.UseInMemoryDatabase("hello"));
             services.AddMvc();
 
             //Now register our services with Autofac container
-            //services.AddScoped<IRepository<IEntity>, Repository<IEntity>>();
             var builder = new ContainerBuilder();
 
             builder.RegisterModule(new RegistrationModule());

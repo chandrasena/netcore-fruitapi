@@ -12,18 +12,9 @@ namespace fruit_api.Controllers
     {
         private readonly IFruitService _fruitService;
 
-        // private readonly FruitContext _context;
-
         public FruitController(IFruitService fruitService)
         {
             _fruitService = fruitService;
-            // _context = context;
-
-            // if (_context.FruitItems.Count() == 0)
-            // {
-            //     _context.FruitItems.Add(new FruitItem { Name = "Item1" });
-            //     _context.SaveChanges();
-            // }
         }
         // GET api/values
         [HttpGet]

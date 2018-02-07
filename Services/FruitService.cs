@@ -5,24 +5,17 @@ using fruit_api.Models;
 namespace fruit_api
 {
     public class FruitService : IFruitService {
-        private readonly FruitContext _context;
-        private readonly IRepository<FruitItem> _repository;
+        //private readonly FruitContext _context;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public FruitService(FruitContext context, IRepository<FruitItem> repository)
+        public FruitService(IUnitOfWork unitOfWork)
         {
-            _context = context;
-            _repository = repository;
-
-            if (_context.FruitItems.Count() == 0)
-            {
-                _context.FruitItems.Add(new FruitItem { Name = "Item1" });
-                _context.SaveChanges();
-            }
+            _unitOfWork = unitOfWork;
         }
 
         public IEnumerable<FruitItem> GetFruits()
         {
-            return _repository.GetAll(); //_context.FruitItems.ToList();    
+            return _unitOfWork.FruitRepository.GetAll(); //_context.FruitItems.ToList();    
         }
     }   
 }
