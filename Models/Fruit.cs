@@ -1,6 +1,6 @@
 namespace fruit_api.Models
 {
-    public class FruitItem : IEntity
+    public class Fruit : IEntity
     {
         public long Id { get; set; }
         public string Name { get; set; }

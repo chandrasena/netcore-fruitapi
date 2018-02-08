@@ -10,7 +10,7 @@ namespace fruit_api
     {
         #region Fields
 
-        private readonly FruitContext _dbContext;
+        private readonly ApplicationDbContext _dbContext;
         private bool disposed;
 
         #endregion
@@ -19,11 +19,12 @@ namespace fruit_api
 
         #region Constructors
 
-        public UnitOfWork(IRepository<FruitItem> fruitRepository, FruitContext dbContext)
+        public UnitOfWork(IRepository<Fruit> fruitRepository, IRepository<Flower> flowerRepository, ApplicationDbContext dbContext)
 
         {
             // set to public auto properties 
             FruitRepository = fruitRepository;
+            FlowerRepository = flowerRepository;
             _dbContext = dbContext;
             //ShouldDispose = false;
 
@@ -72,7 +73,9 @@ namespace fruit_api
         // public bool ShouldDispose { get; set; }
         // public string InitialisedMethod { get; set; }
 
-        public IRepository<FruitItem> FruitRepository { get; set; }
+        public IRepository<Fruit> FruitRepository { get; set; }
+        public IRepository<Flower> FlowerRepository { get; set; }
+
         public void Dispose()
         {
             Dispose(true);

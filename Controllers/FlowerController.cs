@@ -8,11 +8,11 @@ using Microsoft.AspNetCore.Mvc;
 namespace fruit_api.Controllers
 {
     [Route("api/[controller]")]
-    public class FruitController : Controller
+    public class FlowerController : Controller
     {
         private readonly IFruitService _fruitService;
 
-        public FruitController(IFruitService fruitService)
+        public FlowerController(IFruitService fruitService)
         {
             _fruitService = fruitService;
         }

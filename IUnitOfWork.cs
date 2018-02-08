@@ -7,7 +7,8 @@ namespace fruit_api
     {
         #region Properties
 
-        IRepository<FruitItem> FruitRepository { get; set; }
+        IRepository<Fruit> FruitRepository { get; set; }
+        IRepository<Flower> FlowerRepository { get; set; }
 
         #endregion
 

@@ -7,7 +7,7 @@ namespace fruit_api
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class,IEntity
     {
-        public FruitContext Context { get; set; }
+        public ApplicationDbContext Context { get; set; }
         public IUnitOfWork UnitOfWork { get; set; }
 
         public Task Create(TEntity entity)

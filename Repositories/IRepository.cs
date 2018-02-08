@@ -6,7 +6,7 @@ namespace fruit_api
 {
     public interface IRepository<TEntity> where TEntity : class, IEntity
     {
-        FruitContext Context { get; set; }
+        ApplicationDbContext Context { get; set; }
         IUnitOfWork UnitOfWork { get; set; }
         IQueryable<TEntity> GetAll();
         Task<TEntity> GetById(int id);

@@ -4,8 +4,8 @@ using fruit_api.Models;
 
 namespace fruit_api
 {
-    public interface IFruitService {
-        IEnumerable<Fruit> GetFruits();
+    public interface IFlowerService {
+        IEnumerable<Flower> GetFlowers();
     }
     
 }

@@ -13,7 +13,7 @@ namespace fruit_api
             _unitOfWork = unitOfWork;
         }
 
-        public IEnumerable<FruitItem> GetFruits()
+        public IEnumerable<Fruit> GetFruits()
         {
             return _unitOfWork.FruitRepository.GetAll(); //_context.FruitItems.ToList();    
         }

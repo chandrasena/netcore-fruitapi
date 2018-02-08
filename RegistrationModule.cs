@@ -11,6 +11,7 @@ namespace fruit_api
             builder.RegisterGeneric(typeof(Repository<>)).As(typeof(IRepository<>)).InstancePerLifetimeScope();
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerLifetimeScope();
             builder.RegisterType<FruitService>().As<IFruitService>().InstancePerLifetimeScope();
+            builder.RegisterType<FlowerService>().As<IFlowerService>().InstancePerLifetimeScope();
         }
     }
 }
