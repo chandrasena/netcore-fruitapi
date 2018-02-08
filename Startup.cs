@@ -28,7 +28,7 @@ namespace fruit_api
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             // added context. this context is scoped. (once per request)
-            services.AddDbContext<FruitContext>(opt => opt.UseInMemoryDatabase("hello"));
+            services.AddDbContext<FruitContext>(options => options.UseSqlite("Data Source=fruits.db")); //opt => opt.UseInMemoryDatabase("hello"));
             services.AddMvc();
 
             //Now register our services with Autofac container
