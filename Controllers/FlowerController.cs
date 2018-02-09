@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using fruit_api.Models;
+using fruit_api.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace fruit_api.Controllers
@@ -10,17 +11,17 @@ namespace fruit_api.Controllers
     [Route("api/[controller]")]
     public class FlowerController : Controller
     {
-        private readonly IFruitService _fruitService;
+        private readonly IFlowerService _flowerService;
 
-        public FlowerController(IFruitService fruitService)
+        public FlowerController(IFlowerService flowerService)
         {
-            _fruitService = fruitService;
+            _flowerService = flowerService;
         }
         // GET api/values
         [HttpGet]
-        public IEnumerable<Fruit> GetAll()
+        public IEnumerable<FlowerViewModel> GetAll()
         {
-            var result = _fruitService.GetFruits(); //_context.FruitItems.ToList();
+            var result = _flowerService.GetFlowers(); //_context.FruitItems.ToList();
             Console.WriteLine(result);
             return result;
         }

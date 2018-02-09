@@ -1,11 +1,10 @@
 using System.Collections.Generic;
-using System.Linq;
-using fruit_api.Models;
+using fruit_api.ViewModels;
 
 namespace fruit_api
 {
     public interface IFlowerService {
-        IEnumerable<Flower> GetFlowers();
+        IEnumerable<FlowerViewModel> GetFlowers();
     }
     
 }

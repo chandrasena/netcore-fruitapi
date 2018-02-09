@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using AutoMapper;
 using fruit_api.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,14 +30,18 @@ namespace fruit_api
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             // added context. this context is scoped. (once per request)
+            services.AddAutoMapper(typeof(FlowerProfile).GetTypeInfo().Assembly);
+            //services.AddAutoMapper(typeof(FlowerProfile));
+            //services.AddAutoMapper();
+            //services.AddAutoMapper(mapperConfig => mapperConfig.AddProfiles(GetType().Assembly));
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite("Data Source=fruits.db")); //opt => opt.UseInMemoryDatabase("hello"));
             services.AddMvc();
 
             //Now register our services with Autofac container
             var builder = new ContainerBuilder();
 
-            builder.RegisterModule(new RegistrationModule());
-
+            builder.RegisterModule(new RegistrationAutofacModule());
+            builder.RegisterModule(new MapperAutofacModule());
             builder.Populate(services);
 
             var container = builder.Build();
