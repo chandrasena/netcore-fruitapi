@@ -3,6 +3,7 @@ using System.Reflection;
 using Autofac;
 using AutoMapper;
 using fruit_api.Models;
+using Microsoft.Extensions.Logging;
 
 namespace fruit_api
 {
@@ -24,10 +25,12 @@ namespace fruit_api
             // builder.Register(c => c.Resolve<MapperConfiguration>().CreateMapper(c.Resolve)).As<IMapper>().InstancePerLifetimeScope();
             //services.AddTransient<IMapper>();
             //builder.RegisterType<FruitContext>(opt => opt.UseInMemoryDatabase("hello")).AsSelf().InstancePerLifetimeScope();
+            builder.RegisterType<Log4NetLogger>().As<ILogger>().InstancePerLifetimeScope();
             builder.RegisterGeneric(typeof(Repository<>)).As(typeof(IRepository<>)).InstancePerLifetimeScope();
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerLifetimeScope();
             builder.RegisterType<FruitService>().As<IFruitService>().InstancePerLifetimeScope();
             builder.RegisterType<FlowerService>().As<IFlowerService>().InstancePerLifetimeScope();
+            
         }
     }
 }

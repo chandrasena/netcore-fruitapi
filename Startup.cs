@@ -30,10 +30,13 @@ namespace fruit_api
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             // added context. this context is scoped. (once per request)
-            services.AddAutoMapper(typeof(FlowerProfile).GetTypeInfo().Assembly);
+            //services.AddAutoMapper(typeof(FlowerProfile).GetTypeInfo().Assembly);
             //services.AddAutoMapper(typeof(FlowerProfile));
             //services.AddAutoMapper();
             //services.AddAutoMapper(mapperConfig => mapperConfig.AddProfiles(GetType().Assembly));
+            // services.AddSingleton<ILoggerFactory, LoggerFactory>();
+            // services.AddSingleton(typeof(ILogger), typeof(Log4NetLogger));
+
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite("Data Source=fruits.db")); //opt => opt.UseInMemoryDatabase("hello"));
             services.AddMvc();
 
@@ -42,6 +45,7 @@ namespace fruit_api
 
             builder.RegisterModule(new RegistrationAutofacModule());
             builder.RegisterModule(new MapperAutofacModule());
+            builder.RegisterModule(new LoggingAutofacModule());
             builder.Populate(services);
 
             var container = builder.Build();
@@ -52,8 +56,9 @@ namespace fruit_api
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            loggerFactory.AddLog4Net();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
