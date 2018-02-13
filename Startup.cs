@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using AutoMapper;
+using fruit_api.DI;
 using fruit_api.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,14 +30,6 @@ namespace fruit_api
         // This method gets called by the runtime. Use this method to add services to the container.
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            // added context. this context is scoped. (once per request)
-            //services.AddAutoMapper(typeof(FlowerProfile).GetTypeInfo().Assembly);
-            //services.AddAutoMapper(typeof(FlowerProfile));
-            //services.AddAutoMapper();
-            //services.AddAutoMapper(mapperConfig => mapperConfig.AddProfiles(GetType().Assembly));
-            // services.AddSingleton<ILoggerFactory, LoggerFactory>();
-            // services.AddSingleton(typeof(ILogger), typeof(Log4NetLogger));
-
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite("Data Source=fruits.db")); //opt => opt.UseInMemoryDatabase("hello"));
             services.AddMvc();
 
@@ -58,9 +51,11 @@ namespace fruit_api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            loggerFactory.AddLog4Net();
             if (env.IsDevelopment())
             {
+                // enable this if you want to see full application logs. i.e. EF
+                loggerFactory.AddLog4Net();
+
                 app.UseDeveloperExceptionPage();
             }
 

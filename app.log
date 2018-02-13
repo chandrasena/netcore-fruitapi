@@ -317,3 +317,262 @@ SELECT "f"."Id", "f"."IsComplete", "f"."Name"
 FROM "Fruits" AS "f"
 INFO  10:53:25 Executed action fruit_api.Controllers.FruitController.GetAll (fruit-api) in 609.029ms
 INFO  10:53:25 Request finished in 633.067ms 200 application/json; charset=utf-8
+INFO  11:02:07 Application - Main is invoked
+INFO  11:02:11 Request starting HTTP/1.1 GET http://localhost:5000/  
+INFO  11:02:11 Request finished in 96.104ms 404 
+INFO  11:02:15 Request starting HTTP/1.1 GET http://localhost:5000/api/fruit  
+INFO  11:02:15 Entity Framework Core 2.0.1-rtm-125 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+INFO  11:02:15 Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+INFO  11:02:15 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+INFO  11:02:15 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+INFO  11:02:15 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+INFO  11:02:15 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Flowers" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Flowers" PRIMARY KEY AUTOINCREMENT,
+    "IsComplete" INTEGER NOT NULL,
+    "Name" TEXT NULL
+);
+INFO  11:02:15 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Fruits" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Fruits" PRIMARY KEY AUTOINCREMENT,
+    "IsComplete" INTEGER NOT NULL,
+    "Name" TEXT NULL
+);
+INFO  11:02:15 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+INFO  11:02:15 Executed DbCommand (3ms) [Parameters=[@p0='?', @p1='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Flowers" ("IsComplete", "Name")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "Flowers"
+WHERE changes() = 1 AND "Id" = last_insert_rowid();
+INFO  11:02:15 Executed DbCommand (0ms) [Parameters=[@p0='?', @p1='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Flowers" ("IsComplete", "Name")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "Flowers"
+WHERE changes() = 1 AND "Id" = last_insert_rowid();
+INFO  11:02:15 Executed DbCommand (0ms) [Parameters=[@p0='?', @p1='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Fruits" ("IsComplete", "Name")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "Fruits"
+WHERE changes() = 1 AND "Id" = last_insert_rowid();
+INFO  11:02:15 Executed DbCommand (0ms) [Parameters=[@p0='?', @p1='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Fruits" ("IsComplete", "Name")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "Fruits"
+WHERE changes() = 1 AND "Id" = last_insert_rowid();
+INFO  11:02:15 Executing action method fruit_api.Controllers.FruitController.GetAll (fruit-api) with arguments ((null)) - ModelState is Valid
+INFO  11:02:15 hello
+System.Exception: hello
+INFO  11:02:15 Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  11:02:15 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+INFO  11:02:15 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "f"."Id", "f"."IsComplete", "f"."Name"
+FROM "Fruits" AS "f"
+INFO  11:02:15 Executed action fruit_api.Controllers.FruitController.GetAll (fruit-api) in 631.335ms
+INFO  11:02:15 Request finished in 656.676ms 200 application/json; charset=utf-8
+INFO  11:05:26 Application - Main is invoked
+INFO  11:05:34 hello
+System.Exception: hello
+INFO  11:06:08 hello
+System.Exception: hello
+INFO  11:09:40 Application - Main is invoked
+INFO  11:09:48 hello
+System.Exception: hello
+INFO  11:13:35 hello
+System.Exception: hello
+INFO  11:16:52 hello
+System.Exception: hello
+INFO  11:17:47 Request starting HTTP/1.1 GET http://localhost:5000/  
+INFO  11:17:47 Request finished in 132.447ms 404 
+INFO  11:18:09 Request starting HTTP/1.1 GET http://localhost:5000/api/fruit  
+INFO  11:18:09 Entity Framework Core 2.0.1-rtm-125 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+INFO  11:18:09 Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+INFO  11:18:09 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+INFO  11:18:09 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+INFO  11:18:09 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+INFO  11:18:09 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Flowers" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Flowers" PRIMARY KEY AUTOINCREMENT,
+    "IsComplete" INTEGER NOT NULL,
+    "Name" TEXT NULL
+);
+INFO  11:18:09 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Fruits" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Fruits" PRIMARY KEY AUTOINCREMENT,
+    "IsComplete" INTEGER NOT NULL,
+    "Name" TEXT NULL
+);
+INFO  11:18:09 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+INFO  11:18:09 Executed DbCommand (2ms) [Parameters=[@p0='?', @p1='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Flowers" ("IsComplete", "Name")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "Flowers"
+WHERE changes() = 1 AND "Id" = last_insert_rowid();
+INFO  11:18:09 Executed DbCommand (0ms) [Parameters=[@p0='?', @p1='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Flowers" ("IsComplete", "Name")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "Flowers"
+WHERE changes() = 1 AND "Id" = last_insert_rowid();
+INFO  11:18:09 Executed DbCommand (0ms) [Parameters=[@p0='?', @p1='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Fruits" ("IsComplete", "Name")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "Fruits"
+WHERE changes() = 1 AND "Id" = last_insert_rowid();
+INFO  11:18:09 Executed DbCommand (0ms) [Parameters=[@p0='?', @p1='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Fruits" ("IsComplete", "Name")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "Fruits"
+WHERE changes() = 1 AND "Id" = last_insert_rowid();
+INFO  11:18:09 Executing action method fruit_api.Controllers.FruitController.GetAll (fruit-api) with arguments ((null)) - ModelState is Valid
+INFO  11:18:09 hello
+System.Exception: hello
+INFO  11:18:09 Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  11:18:10 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+INFO  11:18:10 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "f"."Id", "f"."IsComplete", "f"."Name"
+FROM "Fruits" AS "f"
+INFO  11:18:10 Executed action fruit_api.Controllers.FruitController.GetAll (fruit-api) in 687.844ms
+INFO  11:18:10 Request finished in 711.901ms 200 application/json; charset=utf-8
+INFO  11:21:54 Request starting HTTP/1.1 GET http://localhost:5000/  
+INFO  11:21:54 Request finished in 148.246ms 404 
+INFO  11:32:56 Request starting HTTP/1.1 GET http://localhost:5000/  
+INFO  11:32:57 Request finished in 133.642ms 404 
+INFO  11:33:02 Request starting HTTP/1.1 GET http://localhost:5000/api/fruit  
+INFO  11:33:02 Entity Framework Core 2.0.1-rtm-125 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+INFO  11:33:02 Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+INFO  11:33:02 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+INFO  11:33:02 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+INFO  11:33:02 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+INFO  11:33:02 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Flowers" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Flowers" PRIMARY KEY AUTOINCREMENT,
+    "IsComplete" INTEGER NOT NULL,
+    "Name" TEXT NULL
+);
+INFO  11:33:02 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Fruits" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Fruits" PRIMARY KEY AUTOINCREMENT,
+    "IsComplete" INTEGER NOT NULL,
+    "Name" TEXT NULL
+);
+INFO  11:33:02 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+INFO  11:33:02 Executed DbCommand (4ms) [Parameters=[@p0='?', @p1='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Flowers" ("IsComplete", "Name")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "Flowers"
+WHERE changes() = 1 AND "Id" = last_insert_rowid();
+INFO  11:33:02 Executed DbCommand (0ms) [Parameters=[@p0='?', @p1='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Flowers" ("IsComplete", "Name")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "Flowers"
+WHERE changes() = 1 AND "Id" = last_insert_rowid();
+INFO  11:33:02 Executed DbCommand (0ms) [Parameters=[@p0='?', @p1='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Fruits" ("IsComplete", "Name")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "Fruits"
+WHERE changes() = 1 AND "Id" = last_insert_rowid();
+INFO  11:33:02 Executed DbCommand (0ms) [Parameters=[@p0='?', @p1='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Fruits" ("IsComplete", "Name")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "Fruits"
+WHERE changes() = 1 AND "Id" = last_insert_rowid();
+INFO  11:33:02 Executing action method fruit_api.Controllers.FruitController.GetAll (fruit-api) with arguments ((null)) - ModelState is Valid
+INFO  11:33:02 hello
+System.Exception: hello
+INFO  11:33:02 Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  11:33:02 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+INFO  11:33:02 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "f"."Id", "f"."IsComplete", "f"."Name"
+FROM "Fruits" AS "f"
+INFO  11:33:02 Executed action fruit_api.Controllers.FruitController.GetAll (fruit-api) in 612.307ms
+INFO  11:33:02 Request finished in 637.17ms 200 application/json; charset=utf-8
+INFO  11:49:18 Request starting HTTP/1.1 GET http://localhost:5000/  
+INFO  11:49:18 Request finished in 111.837ms 404 
+INFO  11:49:40 Request starting HTTP/1.1 GET http://localhost:5000/api/fruit  
+INFO  11:49:40 Entity Framework Core 2.0.1-rtm-125 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+INFO  11:49:40 Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+INFO  11:49:40 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+INFO  11:49:40 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+INFO  11:49:40 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+INFO  11:49:40 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Flowers" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Flowers" PRIMARY KEY AUTOINCREMENT,
+    "IsComplete" INTEGER NOT NULL,
+    "Name" TEXT NULL
+);
+INFO  11:49:40 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Fruits" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Fruits" PRIMARY KEY AUTOINCREMENT,
+    "IsComplete" INTEGER NOT NULL,
+    "Name" TEXT NULL
+);
+INFO  11:49:40 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+INFO  11:49:40 Executed DbCommand (3ms) [Parameters=[@p0='?', @p1='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Flowers" ("IsComplete", "Name")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "Flowers"
+WHERE changes() = 1 AND "Id" = last_insert_rowid();
+INFO  11:49:40 Executed DbCommand (0ms) [Parameters=[@p0='?', @p1='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Flowers" ("IsComplete", "Name")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "Flowers"
+WHERE changes() = 1 AND "Id" = last_insert_rowid();
+INFO  11:49:40 Executed DbCommand (0ms) [Parameters=[@p0='?', @p1='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Fruits" ("IsComplete", "Name")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "Fruits"
+WHERE changes() = 1 AND "Id" = last_insert_rowid();
+INFO  11:49:40 Executed DbCommand (0ms) [Parameters=[@p0='?', @p1='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Fruits" ("IsComplete", "Name")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "Fruits"
+WHERE changes() = 1 AND "Id" = last_insert_rowid();
+INFO  11:49:40 Executing action method fruit_api.Controllers.FruitController.GetAll (fruit-api) with arguments ((null)) - ModelState is Valid
+INFO  11:49:40 hello
+System.Exception: hello
+INFO  11:49:40 Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  11:49:40 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+INFO  11:49:40 Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "f"."Id", "f"."IsComplete", "f"."Name"
+FROM "Fruits" AS "f"
+INFO  11:49:40 Executed action fruit_api.Controllers.FruitController.GetAll (fruit-api) in 630.433ms
+INFO  11:49:40 Request finished in 655.929ms 200 application/json; charset=utf-8
