@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using fruit_api.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace fruit_api.Controllers
@@ -18,6 +19,7 @@ namespace fruit_api.Controllers
         }
         // GET api/values
         [HttpGet]
+        [Authorize]
         public IEnumerable<Fruit> GetAll()
         {
             var result = _fruitService.GetFruits(); //_context.FruitItems.ToList();
